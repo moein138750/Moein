@@ -2,204 +2,182 @@
 <html lang="fa" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <title>MOEIN | دانلود آهنگ</title>
-    <meta name="google-site-verification: googlebbf1c709ae796756.html" />">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>moein zangiabadi</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bungee&family=Vazirmatn:wght@400;700&display=swap');
+
+        :root {
+            --neon-color: #bc13fe;
+            --bg-dark: #050505;
+            --card-bg: #111111;
+        }
+
         body {
             margin: 0;
-            font-family: Tahoma, sans-serif;
-            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-            color: #fff;
+            padding: 0;
+            font-family: 'Vazirmatn', Tahoma, sans-serif;
+            background-color: var(--bg-dark);
+            color: white;
         }
 
         header {
-            padding: 30px;
+            width: 100%;
+            background: linear-gradient(180deg, #1a002e 0%, #050505 100%);
+            padding: 50px 0;
             text-align: center;
-            background: rgba(0,0,0,0.4);
-            box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+            border-bottom: 2px solid var(--neon-color);
+            box-shadow: 0 0 30px rgba(188, 19, 254, 0.3);
         }
 
-        header h1 {
+        .site-title {
+            font-family: 'Bungee', cursive;
+            font-size: 50px;
+            text-shadow: 0 0 10px #fff, 0 0 20px var(--neon-color);
             margin: 0;
-            font-size: 42px;
-            letter-spacing: 2px;
+            text-transform: uppercase;
         }
 
-        header p {
-            margin-top: 10px;
-            color: #ccc;
+        /* بخش جستجو */
+        .search-container {
+            text-align: center;
+            margin: 20px 0;
         }
 
-        .container {
-            max-width: 900px;
+        #searchInput {
+            width: 60%;
+            padding: 12px;
+            border-radius: 25px;
+            border: 1px solid var(--neon-color);
+            background: #111;
+            color: white;
+            outline: none;
+            font-family: 'Vazirmatn';
+        }
+
+        .main-container {
+            max-width: 1200px;
             margin: 40px auto;
-            padding: 20px;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 320px 1fr;
+            gap: 30px;
+        }
+
+        .bio-sidebar {
+            background: var(--card-bg);
+            padding: 25px;
+            border-radius: 20px;
+            border: 1px solid #333;
+            height: fit-content;
+            box-shadow: inset 0 0 15px rgba(188, 19, 254, 0.1);
+        }
+
+        .bio-sidebar h3 { color: var(--neon-color); border-bottom: 1px solid #333; padding-bottom: 10px; }
+        .bio-info p span { color: var(--neon-color); font-weight: bold; }
+
+        .profile-banner {
+            width: 100%;
+            height: 300px;
+            background: url('download (1).jfif') no-repeat center center;
+            background-size: cover;
+            border-radius: 20px;
+            border: 1px solid #444;
+            margin-bottom: 30px;
         }
 
         .music-card {
-            background: rgba(255,255,255,0.08);
-            border-radius: 15px;
+            background: var(--card-bg);
             padding: 20px;
-            margin-bottom: 25px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
-            transition: transform 0.3s;
-        }
-
-        .music-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .music-title {
-            font-size: 22px;
-            margin-bottom: 10px;
-        }
-
-        .music-artist {
-            color: #bbb;
-            margin-bottom: 15px;
-        }
-
-        .download-link {
-            display: inline-block;
-            padding: 12px 25px;
-            background: #00c6ff;
-            background: linear-gradient(to right, #0072ff, #00c6ff);
-            color: #fff;
-            text-decoration: none;
-            border-radius: 30px;
-            font-weight: bold;
+            border-radius: 15px;
+            border-right: 5px solid var(--neon-color);
+            margin-bottom: 20px;
             transition: 0.3s;
         }
 
-        .download-link:hover {
-            background: linear-gradient(to right, #00c6ff, #0072ff);
-            box-shadow: 0 0 15px rgba(0,198,255,0.8);
-        }
+        .music-card:hover { transform: scale(1.01); box-shadow: 0 0 20px rgba(188, 19, 254, 0.2); }
 
-        footer {
-            text-align: center;
-            padding: 20px;
-            background: rgba(0,0,0,0.3);
-            color: #aaa;
-            font-size: 14px;
-        }
+        .track-info h4 { margin: 0; font-size: 20px; color: #fff; }
+        .track-info p { margin: 5px 0; color: #888; }
+
+        audio { width: 100%; filter: invert(1) hue-rotate(280deg); margin: 15px 0; }
+
+        .actions { display: flex; gap: 10px; }
+        .btn { padding: 8px 15px; border-radius: 5px; text-decoration: none; font-weight: bold; font-size: 13px; }
+        .btn-download { background: var(--neon-color); color: white; }
+        .btn-share { border: 1px solid #0088cc; color: #0088cc; }
+
+        footer { text-align: center; padding: 40px; color: #555; border-top: 1px solid #222; margin-top: 50px; }
+
+        @media (max-width: 900px) { .main-container { grid-template-columns: 1fr; } }
     </style>
-    <style>
-.search-box {
-    margin-bottom: 30px;
-    text-align: center;
-}
-
-.search-box input {
-    width: 80%;
-    max-width: 500px;
-    padding: 15px 20px;
-    border-radius: 30px;
-    border: none;
-    outline: none;
-    font-size: 16px;
-    background: rgba(255,255,255,0.15);
-    color: #fff;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.4);
-}
-
-.search-box input::placeholder {
-    color: #ccc;
-}
-</style>
 </head>
-
 <body>
 
-<header><div class="logo">
-    <img src="C:\Users\RayamAmdi\Pictures\Saved Pictures\download.jfif" alt="MOEIN Logo">
-</div>
-    <h1>MOEIN</h1>
-    <p>مرجع دانلود بهترین آهنگ‌ها</p>
+<header>
+    <h1 class="site-title">moein zangiabadi</h1>
 </header>
-<div class="search-box">
-    <input type="text" id="searchInput" placeholder="نام آهنگ یا خواننده را جستجو کنید..." onkeyup="searchMusic()">
+
+<div class="search-container">
+    <input type="text" id="searchInput" onkeyup="searchMusic()" placeholder="جستجوی آهنگ یا هنرمند...">
 </div>
+<div class="main-container">
+    <aside class="bio-sidebar">
+        <h3>درباره من</h3>
+        <div class="bio-info">
+            <p><span>نام:</span> معین زنگی‌آبادی</p>
+            <p><span>سن:</span> ۱۷ سال</p>
+            <p><span>محل زندگی:</span> کرمان</p>
+            <p><span>رشته:</span> شبکه و نرم‌افزار</p>
+        </div>
+    </aside>
 
-<div class="container">
+    <main id="musicList">
+        <div class="profile-banner"></div>
 
-    <!-- آهنگ 1 -->
-    <div class="music-card">
-        <div class="music-title"> f:\اهنگ های ترند\LIVEVIL TIKTOK MUSICS FILES\LIVEVIL TIKTOK MUSICS\PHONK\Eu Sento Gabu! - Slowed.mp3 </div>
-        <div class="music-artist">moeinzni </div>
-        <a class="download-link" href=" f:\اهنگ های ترند\LIVEVIL TIKTOK MUSICS FILES\LIVEVIL TIKTOK MUSICS\PHONK\Eu Sento Gabu! - Slowed.mp3">
-            برای دانلود آهنگ اینجا کلیک کنید
-        </a>
-    </div>
+        <div class="music-card">
+            <div class="track-info">
+                <h4>moein</h4>
+                <p>هنرمند: moein zangiabadi</p>
+            </div>
+            <audio controls loop>
+                <source src="./JUNBI.mp3" type="audio/mpeg">
+            </audio>
+            <div class="actions">
+                <a href="./JUNBI.mp3" download class="btn btn-download">دانلود آهنگ</a>
+                <a href="https://t.me/share/url?url=site.com" class="btn btn-share">اشتراک در تلگرام</a>
+            </div>
+        </div>
 
-    <!-- آهنگ 2 -->
-    <div class="music-card">
-        <div class="music-title"> f:\اهنگ های ترند\LIVEVIL TIKTOK MUSICS FILES\LIVEVIL TIKTOK MUSICS\PHONK\BAIXO - slowed.mp3 </div>
-        <div class="music-artist">moeinzni </div>
-        <a class="download-link" href="f:\اهنگ های ترند\LIVEVIL TIKTOK MUSICS FILES\LIVEVIL TIKTOK MUSICS\PHONK\BAIXO - slowed.mp3">
-            برای دانلود آهنگ اینجا کلیک کنید
-        </a>
-    </div>
+        <div class="music-card">
+            <div class="track-info">
+                <h4>moein</h4>
+                <p>هنرمند: moein zangiabadi</p>
+            </div>
+            <audio controls loop>
+                <source src="./Japanese Stutter.mp3" type="audio/mpeg">
+            </audio>
+            <div class="actions">
+                <a href="./Japanese Stutter.mp3" download class="btn btn-download">دانلود آهنگ</a>
+                <a href="https://t.me/share/url?url=site.com" class="btn btn-share">اشتراک در تلگرام</a>
+            </div>
+        </div>
 
-    <!-- آهنگ 3 -->
-    <div class="music-card">
-        <div class="music-title">f:\اهنگ های ترند\LIVEVIL TIKTOK MUSICS FILES\LIVEVIL TIKTOK MUSICS\PHONK\Diamond N Roses - Tiktok Edit.mp3  </div>
-        <div class="music-artist">moeinzni </div>
-        <a class="download-link" href="f:\اهنگ های ترند\LIVEVIL TIKTOK MUSICS FILES\LIVEVIL TIKTOK MUSICS\PHONK\Diamond N Roses - Tiktok Edit.mp3">
-            برای دانلود آهنگ اینجا کلیک کنید
-        </a>
-    </div>
-
-    <div class="music-card">
-    <div class="music-title">moein</div>
-    
-    <div class="music-artist">moeinzni</div>
-    
-    <audio controls>
-        <source src="f:\images\musics\PHONK\METAMORPHOSIS 5.mp3?v=1" type="audio/mpeg">
-        مرورگر شما از پخش صدا پشتیبانی نمی‌کند.
-    </audio>
-
-    <br>
-
-    <a class="download-link" href="f:\images\musics\PHONK\METAMORPHOSIS 5.mp3" download>
-        برای دانلود آهنگ اینجا کلیک کنید
-    </a>
-</div>
-
-
-<div id="noResult" style="display:none; text-align:center; margin-top:30px; color:#ffbaba; font-size:18px;">
-    آهنگی پیدا نشد 😕
+        <div id="noResult" style="display:none; text-align:center; color:var(--neon-color);">آهنگی پیدا نشد 😕</div>
+    </main>
 </div>
 
 <footer>
     © 2026 | MOEIN ZANGIABADI Website - طراحی شده با ❤️
 </footer>
-<script>
-function searchMusic() {
-    let input = document.getElementById("searchInput").value.toLowerCase();
-    let cards = document.getElementsByClassName("music-card");
 
-    for (let i = 0; i < cards.length; i++) {
-        let title = cards[i].innerText.toLowerCase();
-        if (title.includes(input)) {
-            cards[i].style.display = "";
-        } else {
-            cards[i].style.display = "none";
-        }
-    }
-}
-</script>
 <script>
 function searchMusic() {
     let input = document.getElementById("searchInput").value.toLowerCase();
     let cards = document.getElementsByClassName("music-card");
     let found = false;
-
     for (let i = 0; i < cards.length; i++) {
         let text = cards[i].innerText.toLowerCase();
-
         if (text.includes(input)) {
             cards[i].style.display = "";
             found = true;
@@ -207,14 +185,8 @@ function searchMusic() {
             cards[i].style.display = "none";
         }
     }
-
-    if (!found && input !== "") {
-        document.getElementById("noResult").style.display = "block";
-    } else {
-        document.getElementById("noResult").style.display = "none";
-    }
+    document.getElementById("noResult").style.display = found ? "none" : (input==="" ? "none" : "block");
 }
 </script>
-
 </body>
 </html>
